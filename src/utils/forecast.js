@@ -10,7 +10,8 @@ const forecast = (lat, lon, callback) => {
         } else if (body.error) {
             callback('Unable to find location!', undefined);
         } else {
-            callback(undefined, "It is currently " + body.current.temperature + " degrees in shadow");
+            const result = `It is currently ${body.current.temperature}. Now it is ${body.current.is_day === "yes" ? "day" : "night"}.`
+            callback(undefined, result);
         }
     });
 }
