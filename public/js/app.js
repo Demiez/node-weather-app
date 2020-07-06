@@ -3,7 +3,7 @@ const search = document.querySelector('.search-input');
 const plocation = document.querySelector('.location');
 const pforecast = document.querySelector('.forecast');
 
-const getForecast = (address) => fetch(`http://localhost:3000/weather?address=${address}`)
+const getForecast = (address) => fetch(`/weather?address=${address}`)
     .then((res) => res.json())
     .then((data) => {
         if (data.error) {
